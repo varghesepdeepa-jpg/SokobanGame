@@ -2,7 +2,7 @@
 
 A tile-based puzzle game built with React and Vite based on the classic "Sokoban" mechanics. The player controls a wizard character tasked with pushing crates/blocks onto designated target goal spaces within a grid-based map.
 
-## 🚀 Live Demo / Features
+## 🚀  Features
 
 - **Dynamic Grid Rendering:** The entire tile map grid layer, player initialization position, and movable block entities are systematically generated from a data array matrix.
 - **Custom Controls:** Keyboard Arrow keys provide smooth layout navigation. Page scrolling behaviors are automatically overridden.
