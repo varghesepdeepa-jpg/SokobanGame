@@ -1,24 +1,27 @@
-/* Enum of CSS Classes for the static elements   */
-window.Tiles = {
+import App from "./App";
+
+
+/*   Enum of CSS Classes for the static elements   */
+export const Tiles = {
     Wall: "tile-wall",
     Space: "tile-space",
     Goal: "tile-goal"
 };
 
-/* Enum of CSS Classes for the moving elements   */
-window.Entities = {
+/*   Enum of CSS Classes for the moving elements   */
+export const Entities = {
     Character: "entity-player",
     Block: "entity-block",
     BlockDone: "entity-block-goal"
 };
 
-/* Legend
+/*  Legend
     W = Wall
     B = Movable block
     P = Player starting position
     G = Goal area for the blocks
 */
-window.tileMap01 = {
+export const tileMap01 = {
     width: 19,
     height: 16,
     mapGrid: [
