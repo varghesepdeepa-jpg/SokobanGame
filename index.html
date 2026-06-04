@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sokoban Game</title>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Control Panel Container Style */
+        .control-panel {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Button Layout and Design Styles */
+        .btn {
+            background-color: #444;
+            color: white;
+            border: 2px solid #666;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #555;
+            border-color: #888;
+        }
+
+        .btn:active {
+            background-color: #333;
+        }
+
+        /* Grid container layout fix */
+        #game-container {
+            display: grid;
+            background-color: #111;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .tile {
+            width: 32px;
+            height: 32px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Static Floor Tiles */
+        .tile-wall {
+            background-color: #706868;
+            border: 1px solid #333;
+        }
+
+        .tile-space {
+            background-color: #353333;
+        }
+
+        .tile-goal {
+            background-color: #553355;
+            border: 2px dashed #ce52ce;
+        }
+
+        /* Moving Entities overlay graphics */
+        .entity-player::after {
+            content: "🧙‍♂️";
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .entity-block::after {
+            content: "📦";
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .entity-block-goal::after {
+            content: "✅";
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+  #win-message {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sokoban Workshop</h1>
+    
+    <div class="control-panel">
+        <button id="back-btn" class="btn">↩ Back (Undo)</button>
+        <button id="reset-btn" class="btn">🔄 Reset Level</button>
+    </div>
+
+    <div id="game-container"></div>
+    <div id="win-message">🎉 You Won! All blocks are home! 🎉</div>
+
+    <script src="sokobanbase.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+
+</html>
